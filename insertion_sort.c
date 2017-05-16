@@ -3,6 +3,12 @@
 #include<math.h>
 #include<string.h>
 
+/*
+worst case time complexity =O(n^2) when array is sorted in reverse order
+best case time complexity =O(n) when array is already sorted
+average time complexity =O(n^2)
+*/
+
 void insertion_sort(int *a,int n){
 	int i,j,key;
 	for(i=1;i<n;i++){
@@ -12,7 +18,7 @@ void insertion_sort(int *a,int n){
 	   }
 	   a[j+1]=key;
 	}
-return;	
+return;
 }
 
 int main(){
@@ -21,6 +27,6 @@ int main(){
 	int *a=(int *)malloc(sizeof(int)*n);
 	for(i=0;i<n;i++)scanf("%d",&a[i]);
 	insertion_sort(a,n);
-	for(i=0;i<n;i++)printf("%d ",a[i]);	
-return 0;	
+	for(i=0;i<n;i++)printf("%d ",a[i]);
+return 0;
 }

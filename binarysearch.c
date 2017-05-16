@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+worst case time complexity = O(log n) (found using recursion methods eg:recursion tree method,master method)
+best case time complexity =O(1) when element being serched is in middle of sorted array
+average time complexity =O(log n)
+*/
+
 int binarysearch(int *a,int p,int q,int k){
     printf("%d,%d\n",p,q);
     if(p<=q){
