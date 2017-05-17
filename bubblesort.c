@@ -11,15 +11,18 @@ average time complexity = O(n^2)
 */
 
 void bubblesort(int *a,int n){
-    int i,j,temp;
+    int i,j,temp,flag;
     for(i=0;i<n-1;i++){
+        flag=0;
         for(j=n-1;j>i;j--){
             if(a[j]<a[j-1]){
                 temp=a[j];
                 a[j]=a[j-1];
                 a[j-1]=temp;
+                flag=1;
             }
         }
+        if(flag==0)break;
     }
     return;
 }
