@@ -9,7 +9,7 @@ For quicksort:
   worst case time complexity = O(n^2)
   best case time complexity = O(n*log n)
   average case time complexity = O(n*log n)
-  It is an in-place sorting algorithm unlike mergesort but follows dive and conquer paradigm
+  It is an in-place sorting algorithm unlike mergesort but follows divide and conquer paradigm
 */
 
 int partition(int *a,int p,int r){//time complexity = O(n)
