@@ -12,8 +12,7 @@ For quicksort:
 
 int partition_rand(int *a,int p,int r){//time complexity = O(n)
     int i,j,temp;
-    time_t t;
-    srand((unsigned) time(&t));
+    srand( time(NULL));
     i=(rand()%(r-p+1))+p;
     temp=a[i];
     a[i]=a[r];
