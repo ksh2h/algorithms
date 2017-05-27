@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-void minmax(int *a,int n,int *p,int *q){
-    int i;
+void minmax(int *a,int n,int *p,int *q){//worst case time complexity=O(n)
+    int i;//no of comparisons = 3 per 2 elements
     if(n==1){
         *p=*q=a[0];
         return;
@@ -39,8 +39,8 @@ void minmax(int *a,int n,int *p,int *q){
     return;
 }
 
-int randomised_partition(int *a,int p,int r){//worst case running time=O(n^2)
-    srand(time(NULL));//Expected value of running time = O(n)
+int randomised_partition(int *a,int p,int r){//worst case time complexity=O(n)
+    srand(time(NULL));
     int j=p,temp,i=(rand()%(r-p+1))+p;
     temp=a[i];
     a[i]=a[r];
@@ -61,8 +61,8 @@ int randomised_partition(int *a,int p,int r){//worst case running time=O(n^2)
     return i+1;
 }
 
-int randomised_select(int *a,int p,int r,int i){
-    if(p==r)return a[p];
+int randomised_select(int *a,int p,int r,int i){//worst case running time=O(n^2)
+    if(p==r)return a[p];//Expected value of running time = O(n)
     int q=randomised_partition(a,p,r);
     if(i==q)return a[q];
     if(i<q)return randomised_select(a,p,q-1,i);
