@@ -5,6 +5,11 @@
 #include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
+/*
+for all following subroutines time complexity = O(n);
+for recursive subroutines, space complexity = O(1);
+for non-recursive subroutines,space complexity=O(h);where h is the height of the binary tree.
+*/
 int n=5;
 
 typedef struct node{
