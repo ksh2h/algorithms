@@ -57,12 +57,12 @@ void levelorder(node * x) {//time complexity=O(n)..space complexity=O(n)
 
 
 int main(){
-    node *head=new(1);
-    head->left=new(2);
-    head->right=new(3);
-    head->left->right=new(4);
-    head->right->right=new(5);
+    node *root=new(1);
+    root->left=new(2);
+    root->right=new(3);
+    root->left->right=new(4);
+    root->right->right=new(5);
     printf("level order:\n");
-    levelorder(head);
+    levelorder(root);
     return 0;
 }
