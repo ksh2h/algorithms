@@ -2,7 +2,6 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-# define MAXSIZE 100
 
 typedef struct node {
     int key;
@@ -154,13 +153,28 @@ node *insert(node *root,int key){//worst case time complexity=O(log n).
     return root;
 }
 
-int select(node *x,int i){//worst case time complexity=O(log n).
+node * select(node *x,int i){//worst case time complexity=O(log n).
     int r;
     if(x->left)r=x->left->size+1;
     else r=1;
     if(i==r)return x;
     if(i<r)return select(x->left,i);
     else return select(x->right,i-r);
+}
+
+node * select_nonrec(node *x,int i){//worst case time complexity=O(log n).
+    int temp,r=0;
+    while(x){
+        if(x->left)temp=x->left->size+1;
+        else temp=1;
+        if(r+temp==i)return x;
+        if(r+temp<i){
+            r+=temp;
+            x=x->right;
+        }
+        else x=x->left;
+    }
+    return x;
 }
 
 int rank(node *root,node *x){//worst case time complexity=O(log n).
@@ -181,7 +195,7 @@ node *delete(node *root,int i){
 int main() {
     node *root=NULL;
     int op,i;
-    node *x;
+    node *x,*y;
     while(1){
         scanf("%d",&op);
         if(op==1||op==2||op==3||op==4||op==5)scanf("%d",&i);
@@ -198,7 +212,8 @@ int main() {
                     if(i>root->size||i<=0)printf("Invalid input\n");
                     else {
                             x=select(root,i);
-                            printf("%dth order statistic =%d\n",i,x->key);
+                            y=select_nonrec(root,i);
+                            printf("rec : %dth order statistic =%d\nnonrec : %dth order statistic =%d\n",i,x->key,i,y->key);
                     }
             }
             else printf("Sorry,tree is empty\n");
