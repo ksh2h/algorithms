@@ -31,6 +31,8 @@ int lcs(char *x,char *y,int **b,int **c,int i,int j){
     return c[i][j];
 }
 
+/*Worst case time complexity = O(m+n).
+ */
 void printans(char *x,int **b,int i,int j){
     if(i<1||j<1)return;
     if(b[i][j]==1){
