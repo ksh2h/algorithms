@@ -9,7 +9,6 @@ typedef struct node{
 }node ;
 
 typedef struct list{
-    int src;
     struct node * head;
 }list;
 
@@ -23,7 +22,6 @@ Graph * creategraph(int V){
     g->V = V;
     g->array = (list *)malloc(sizeof(list)*V);
     while(V--){
-        g->array[V].src = V;
         g->array[V].head = NULL;
     }
     return g;
