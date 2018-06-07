@@ -61,7 +61,7 @@ int dequeue(int *q,int n){
 void BFS(Graph * g){
     int *visited = (int *)calloc(g->V,sizeof(int));
     int n = g->V+1,v;
-    int *q[n];
+    int q[n];
     enqueue(q,0,n);
     while((v=dequeue(q,n))!=-1){
         printf("%d ",v);
